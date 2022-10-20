@@ -18,7 +18,8 @@ export const serverSchema = z.object({
   ),
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
-  KOMIKU_API_KEY: z.string().url(),
+  KOMIKU_API_URL: z.string().url(),
+  REDIS_URL: z.string().url(),
 });
 
 /**
