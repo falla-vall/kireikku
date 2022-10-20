@@ -23,13 +23,19 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const ref = useRef<HTMLButtonElement>(null);
-  const bgColor = window
-    ?.getComputedStyle(ref.current as Element, null)
-    .getPropertyValue("background-color");
-  const color = window
-    ?.getComputedStyle(ref.current as Element, null)
-    .getPropertyValue("color");
-  const isDark = tinyColor(bgColor).isDark();
+  const bgColor =
+    typeof window !== "undefined" &&
+    ref.current &&
+    window
+      .getComputedStyle(ref.current as Element, null)
+      .getPropertyValue("background-color");
+  const color =
+    typeof window !== "undefined" &&
+    ref.current &&
+    window
+      .getComputedStyle(ref.current as Element, null)
+      .getPropertyValue("color");
+  const isDark = tinyColor(bgColor || undefined).isDark();
   return (
     <button
       {...props}
@@ -56,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {isLoading ? (
         <BeatLoader
-          color={isDark ? "#FFFFFF" : color}
+          color={isDark ? "#FFFFFF" : color || undefined}
           loading={isLoading}
           size={8}
           cssOverride={override}
