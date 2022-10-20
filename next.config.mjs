@@ -12,7 +12,7 @@ import withPWA from "next-pwa";
  */
 function defineNextConfig(config) {
   return withPWA({
-    dest: "public/.pwa",
+    dest: "public",
     disable: env.NODE_ENV === "development",
   })(config);
 }
