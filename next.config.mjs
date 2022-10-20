@@ -11,7 +11,10 @@ import withPWA from "next-pwa";
  * @constraint {{import('next').NextConfig}}
  */
 function defineNextConfig(config) {
-  return withPWA({ dest: "public/.pwa" })(config);
+  return withPWA({
+    dest: "public/.pwa",
+    disable: env.NODE_ENV === "development",
+  })(config);
 }
 
 export default defineNextConfig({
