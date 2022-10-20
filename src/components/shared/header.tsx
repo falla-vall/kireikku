@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NavigationMenu from "../navigation-menu";
 import Button from "../button";
+import blurData from "../../data/blur.json";
 
 const Header: React.FC = () => {
   return (
@@ -16,6 +17,8 @@ const Header: React.FC = () => {
                 alt="icon"
                 layout="fill"
                 objectFit="contain"
+                placeholder="blur"
+                blurDataURL={blurData["header-logo"]}
               />
             </div>
             <div className="text-xl text-quaternary-500 font-bold">
