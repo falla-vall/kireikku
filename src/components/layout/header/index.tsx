@@ -1,9 +1,11 @@
 import React from "react";
+import { useSession } from "next-auth/react";
 import {
   BellIcon,
   ChatBubbleIcon,
   MagnifyingGlassIcon,
 } from "@radix-ui/react-icons";
+import Button from "../../button";
 import IconButton from "../../icon-button";
 import Input from "../../input";
 import Logo from "./logo";
@@ -13,6 +15,7 @@ import Profile from "./profile";
 
 const Header: React.FC = () => {
   const { isLG } = useMediaQuery();
+  const { data: session } = useSession();
   return (
     <div className="container fixed top-0 z-10 flex w-full items-center justify-between bg-black">
       <div className="flex items-center gap-4">
@@ -28,7 +31,13 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <IconButton icon={<BellIcon />} />
           <IconButton icon={<ChatBubbleIcon />} />
-          <Profile />
+          {session ? (
+            <Profile />
+          ) : (
+            <div className="px-4">
+              <Button>Sign In</Button>
+            </div>
+          )}
         </div>
       </div>
     </div>
