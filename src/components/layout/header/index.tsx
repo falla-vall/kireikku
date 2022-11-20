@@ -8,8 +8,8 @@ import IconButton from "../../icon-button";
 import Input from "../../input";
 import Logo from "./logo";
 import Menu from "./menu";
-import Profile from "./profile";
 import useMediaQuery from "../../../hooks/use-media-query";
+import Profile from "./profile";
 
 const Header: React.FC = () => {
   const { isLG } = useMediaQuery();
