@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Profile: React.FC = () => {
   return (
-    <button className="flex items-center gap-4 rounded-sm p-4 hover:bg-gray-900">
+    <button className="hidden items-center gap-4 rounded-sm p-4 hover:bg-gray-900 sm:flex">
       <div className="text-sm">flla</div>
       <Image
         src="https://dummyimage.com/32x32/fff/000"

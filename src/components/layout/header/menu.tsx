@@ -18,7 +18,7 @@ const Menu: React.FC = () => {
     },
   ];
   return (
-    <NavigationMenu.Root>
+    <NavigationMenu.Root className="hidden sm:block">
       <NavigationMenu.List className="flex">
         {menus.map((menu) => (
           <NavigationMenu.Item key={menu.name}>
