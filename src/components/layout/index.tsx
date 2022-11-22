@@ -22,10 +22,10 @@ const Layout: React.FC<React.PropsWithChildren & { title: string }> = ({
       </Head>
       <div className={cx("container", rubik.className)}>
         <Header />
-        <div className="flex flex-col-reverse md:flex-row">
-          <Sidebar />
-          <main className="flex-1">{children}</main>
-        </div>
+        <Sidebar />
+        <main className="max-w-screen mt-16 mb-16 p-4 md:ml-16 md:mb-0">
+          {children}
+        </main>
       </div>
     </>
   );

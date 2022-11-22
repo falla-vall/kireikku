@@ -8,6 +8,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      screens: {
+        xs: "480px",
+      },
       colors: {
         "cetacean-blue": {
           100: "#d0ccdc",

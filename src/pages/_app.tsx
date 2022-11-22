@@ -4,6 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import Layout from "../components/layout";
 import { trpc } from "../utils/trpc";
 import "../styles/globals.css";
+import "swiper/css";
 
 const MyApp: AppType<{ session: Session | null; title: string }> = ({
   Component,

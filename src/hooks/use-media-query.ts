@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const useMediaQuery = () => {
   const initial = {
+    isXS: false,
     isSM: false,
     isMD: false,
     isLG: false,
@@ -12,13 +13,14 @@ const useMediaQuery = () => {
   const [mediaQuery, setMediaQuery] = useState(initial);
 
   const handleMediaQuery = () => {
+    const isXS = window.matchMedia("(max-width: 480px)").matches;
     const isSM = window.matchMedia("(min-width: 640px)").matches;
     const isMD = window.matchMedia("(min-width: 768px)").matches;
     const isLG = window.matchMedia("(min-width: 1024px)").matches;
     const isXL = window.matchMedia("(min-width: 1280px)").matches;
     const is2XL = window.matchMedia("(min-width: 1536px)").matches;
 
-    setMediaQuery({ isSM, isMD, isLG, isXL, is2XL });
+    setMediaQuery({ isXS, isSM, isMD, isLG, isXL, is2XL });
   };
 
   useEffect(() => {

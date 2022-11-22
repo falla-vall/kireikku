@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
     },
   ];
   return (
-    <NavigationMenu.Root className="fixed bottom-0 flex max-h-screen w-full items-center justify-center bg-black md:sticky md:top-0 md:w-auto">
+    <NavigationMenu.Root className="fixed bottom-0 z-[5] flex max-h-screen w-full items-center justify-center bg-black md:top-0 md:w-auto">
       <NavigationMenu.List className="flex flex-row md:flex-col">
         {menus.map(
           (menu) =>

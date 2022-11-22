@@ -8,7 +8,7 @@ const Logo: React.FC = () => {
       <div className="max-w-8 relative">
         <PlayLogo width="32" height="32" />
       </div>
-      <div className="text-2xl font-bold">キレイック</div>
+      <div className="hidden text-2xl font-bold xs:block">キレイック</div>
     </Link>
   );
 };
